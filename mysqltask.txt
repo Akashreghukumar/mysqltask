@@ -1,0 +1,37 @@
+CREATE DATABASE mysqltask;
+
+CREATE TABLE student(id INT ,username VARCHAR(100),dept VARCHAR(100));
+
+INSERT INTO student(id,username,dept) VALUES (1,"AKASH","CSE");
+INSERT INTO student(id,username,dept) VALUES (2,"Ragav","ECE");
+INSERT INTO student(id,username,dept) VALUES (3,"Divya","CSE");
+INSERT INTO student(id,username,dept) VALUES (4,"Shiva","CSE");
+INSERT INTO student(id,username,dept) VALUES (5,"Vishnu","EEE");
+
+UPDATE student SET username="Ganesh" WHERE username="Ragav"; 
+ 
+SELECT DISTINCT dept FROM student;
+
+SELECT username,dept FROM student WHERE dept="CSE" OR dept="ECE";
+#ORDER BY
+SELECT * FROM student ORDER BY id DESC;
+#LIMIT
+SELECT * FROM student LIMIT 2;
+SELECT username,dept,id FROM student ORDER BY id DESC LIMIT 2;
+#bewteen
+SELECT username,id FROM student WHERE id BETWEEN 1 AND 3;
+
+#like
+SELECT * from student WHERE dept LIKE "c%" ;
+SELECT * FROM student WHERE dept LIKE "%e";
+SELECT * FROM student WHERE username LIKE "%a%";
+SELECT * FROM student WHERE username NOT LIKE "a%";
+#in   
+SELECT username,dept FROM student WHERE dept IN("cse","ece");
+
+#offset
+SELECT * FROM student WHERE dept IN("cse","ece" ,"eee") LIMIT 4 OFFSET 3 ;
+#alais
+
+SELECT username as uname from student;
+
